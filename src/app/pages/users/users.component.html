@@ -1,0 +1,43 @@
+<div [ngClass]="'tools'">
+  <div [ngClass]="'tools_header'">Users</div>
+  <div [ngClass]="'tools_wrapper'">
+    <div [ngClass]="'tool'">
+      <div [ngClass]="'tool_name'">Table</div>
+      <div [ngClass]="{'tool_button': true, 'turnOn': show === 'table'}" (click)="show='table'">
+        <div [ngClass]="'tool_button-tog'"></div>
+      </div>
+    </div>
+    <div [ngClass]="'tool'">
+      <div [ngClass]="'tool_name'">Custom</div>
+      <div [ngClass]="{'tool_button': true, 'turnOn': show === 'custom'}" (click)="show='custom'">
+        <div [ngClass]="'tool_button-tog'"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<p-table styleClass="p-datatable-gridlines p-datatable-striped" [ngClass]="{'show': show === 'table'}" [value]="users">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Imie</th>
+            <th>Wiek</th>
+            <th>Stanowisko</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.age }}</td>
+            <td>{{ product.profession }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<div [ngClass]="{'custom': true, 'show': show === 'custom'}">
+  <div class="card" *ngFor="let user of users">
+    <div class="avatar"></div>
+    <div class="info">
+      <p class="name">{{ user.name }}</p>
+      <p class="info-txt"><span class="info_name">Wiek: </span><strong>{{ user.age }}</strong></p>
+      <p class="info-txt"><span class="info_name">Stanowisko: </span><strong>{{ user.profession }}</strong></p>
+    </div>
+  </div>
+</div>

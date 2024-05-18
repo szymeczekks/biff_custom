@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "name": "Paweł",
+      "age": 18,
+      "profession": "Front end developer"
+    }
+  ]
+}

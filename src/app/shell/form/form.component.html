@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()" *ngIf="isFormVisible">
+  <button (click)="toggleComponent()" class="exit">X</button>
+  <label>
+    Nazwa:
+    <input type="text" name="name" [(ngModel)]="newData.name" required>
+  </label>
+  <label>
+    Wiek:
+    <input type="text" name="name" [(ngModel)]="newData.age" required>
+  </label>
+  <label>
+    Stanowisko:
+    <input type="text" name="name" [(ngModel)]="newData.profession" required>
+  </label>
+  <button type="submit">Dodaj</button>
+</form>

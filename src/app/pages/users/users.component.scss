@@ -1,0 +1,264 @@
+:host {
+  background: rgb(32, 5, 41);
+  background: linear-gradient(
+    135deg,
+    rgba(32, 5, 41, 1) 0%,
+    rgba(111, 19, 143, 1) 100%
+  );
+  box-shadow: 5px 5px 10px rgba(32, 5, 41, .2);
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 20px;
+  display: block;
+
+}
+:host * {
+  box-sizing: border-box;
+}
+::ng-deep table {
+  border-radius: 20px;
+  overflow: hidden;
+  display: none;
+  border-spacing: 2px;
+}
+::ng-deep .show table {
+  display: table;
+}
+::ng-deep td {
+  background-color: #E896AB;
+  font-size: 20px;
+  border: none;
+  color: #4A0C60;
+}
+
+::ng-deep th {
+  background-color: #EA698B;
+  border: none;
+  text-align: center;
+  font-size: 32px;
+  color: #4A0C60;
+}
+
+.tools {
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 32px;
+  border-radius: 50px;
+  background-color: #78279442;
+  box-shadow: 5px 5px 10px rgba(52, 5, 69, 0.2588235294);
+
+  &_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10;
+    background-color: #EA698B;
+    height: 50px;
+    border-radius: 25px;
+    color: #310840;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 30px;
+  }
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+.tool {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  &_name {
+    color: #fff;
+  }
+
+  &_button {
+    border: 2px solid #EA698B;
+    border-radius: 25px;
+    height: 50px;
+    width: 100px;
+    padding: 2px;
+    cursor: pointer;
+  }
+
+  &_button-tog {
+    height: 42px;
+    width: 42px;
+    background: rgb(234,105,139);
+    background: radial-gradient(circle, rgba(234,105,139,1) 55%, rgba(33,6,42,1) 100%);
+    border-radius: 21px;
+  }
+  &_button.turnOn {
+    .tool_button-tog {
+      margin-left: auto;
+    }
+  }
+
+
+
+}
+.custom {
+  display: none;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  background-color: #79279444;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 5px 5px 10px #34054542;
+
+  .card {
+    color: #fff;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    width: calc(33.33% - 14px);;
+    font-size: 14px;
+    line-height: 20px;
+
+    .name {
+      margin: 0;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 10px;
+    }
+
+    .avatar {
+      width: 50%;
+      background-color: #e896ab70;
+      border-radius: 10px;
+      aspect-ratio: 1/1;
+    }
+
+    .info {
+      width: 50%;
+    }
+
+    .info-txt {
+      margin: 0;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.custom.show {
+  display: flex;
+}
+
+@media(max-width: 1100px) {
+
+  ::ng-deep th {
+    font-size: 20px;
+  }
+
+  ::ng-deep td {
+    font-size: 16px;
+  }
+
+  .tools {
+    padding: 10px;
+    font-size: 20px;
+
+    &_wrapper {
+      gap: 10px;
+    }
+
+    &_header {
+      height: 40px;
+      padding: 0 10px;
+    }
+  }
+
+  .custom {
+    .card {
+      width: calc(50% - 14px);
+    }
+  }
+
+  .tool{
+    gap: 10px;
+
+    &_button {
+      border-radius: 20px;
+      height: 40px;
+      width: 70px;
+    }
+
+    &_button-tog {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
+@media (max-width:700px) {
+  ::ng-deep table {
+    width: 700px;
+  }
+  .p-component {
+    overflow-x: auto;
+  }
+  .tools {
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 30px;
+    &_wrapper {
+      justify-content: space-evenly;
+    }
+  }
+
+  .tool {
+    flex-direction: column;
+    gap: 5px;
+
+    &_name {
+      font-size: 15px;
+    }
+  }
+
+  .custom {
+    .card {
+      width: 100%;
+      font-size: 13px;
+      line-height: 19px;
+
+      .name {
+        font-size: 15px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .custom {
+    padding: 10px;
+    gap: 10px;
+    .card {
+      flex-direction: column;
+
+      .avatar {
+        width: 100%;
+      }
+
+      .info {
+        width: 100%;
+      }
+
+      .name {
+        font-size: 15px;
+        line-height: 25px;
+      }
+    }
+  }
+}

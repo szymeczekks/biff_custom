@@ -1,0 +1,8 @@
+<form (ngSubmit)="onSubmit()" *ngIf="isDeleteVisible">
+  <button (click)="toggleComponent()" class="exit">X</button>
+  <label>
+    Nazwa:
+    <input type="text" name="name" [(ngModel)]="newData.name" required>
+  </label>
+  <button type="submit">Usuń</button>
+</form>
